@@ -89,8 +89,9 @@ ul#social-icon-bar{
   width:32px;
   height:auto;
   list-style:none;
-  padding:7px;
+  padding: 7px;
   margin:0;
+  z-index: 5;
   animation-name: socialAnimate;
   animation-duration: .2s;
   position: sticky;
@@ -108,29 +109,101 @@ ul#social-icon-bar a:link{
 
 ul#social-icon-bar a img:hover{
   transform: scale(1.5);
-  transition: 0.2s ease-in;
+  transform: translate(25,0);
+  transition: 0.2s ease-in-out;
+  
 }
 
 .image1{
   opacity:0.1;
 }
+<style>
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
 
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(128, 128, 128, 0.43);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
 
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+<style>
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 6;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+[data-tooltip]:before {
+  position: absolute;
+  left: 55px;
+  margin-left: -10px;
+  padding: 8px;
+  width: 220px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: rgba(128, 128, 128, 0.6);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+</style>
 </style>
 
 <body>
 	<ul id="social-icon-bar">
-			<a href="skeletonkey/index.html" target="_blank"><img src="skeletonkey/key.png"></a>
+			<a href="skeletonkey/index.html" target="_blank" data-tooltip="skeletonKeY"><img src="skeletonkey/key.png"></a>
          </li>
-		 <li>&nbsp;&nbsp;&nbsp;</li>
-         <li><a href="https://www.youtube.com/channel/UC-7Z3ORO-pejhzfYSklZgOg?" target="_blank"><img src="thumbs/youtube.png"></a></li>
-         <li><a href="https://twitter.com/RomJacket" target="_blank"><img src="thumbs/twitter.png"></a></li>
-         <li><a href="https://github.com/romjacket" target="_blank"><img src="thumbs/github.png"></a></li>
-         <li><a href="https://reddit.com/u/romjacket" target="_blank"><img src="thumbs/reddit.png"></a></li>
-         <li><a href="https://facebook.com/rom.jacket" target="_blank"><img src="thumbs/facebook.png"></a></li>
-         <li><a href="https://instagram.com/rom_jacket/" target="_blank"><img src="thumbs/instagram.png"></a></li>
-         <li><a href="https://www.paypal.me/romjacket" target="_blank"><img src="thumbs/paypal.png"></a></li>
-         <li><a href="mailto:=romjacket@gmail.com"><img src="thumbs/email.png"></a></li>
+         <li><a href="https://www.youtube.com/channel/UC-7Z3ORO-pejhzfYSklZgOg?" target="_blank" data-tooltip="YouTube Sensation"><img src="thumbs/youtube.png"></a></li>
+         <li><a href="https://twitter.com/RomJacket" target="_blank" data-tooltip="Twitter Famous"><img src="thumbs/twitter.png"></a></li>
+         <li><a href="https://github.com/romjacket" target="_blank" data-tooltip="GitHub Nerd"><img src="thumbs/github.png"></a></li>
+         <li><a href="https://reddit.com/u/romjacket" target="_blank" data-tooltip="the Reddit account"><img src="thumbs/reddit.png"></a></li>
+         <li><a href="https://facebook.com/rom.jacket" target="_blank" data-tooltip="Facebook is the devil"><img src="thumbs/facebook.png"></a></li>
+         <li><a href="https://instagram.com/rom_jacket/" target="_blank" data-tooltip="Instagram Fabulous"><img src="thumbs/instagram.png"></a></li>
+         <li><a href="https://discord.gg/HuP8QP" target="_blank" data-tooltip="DoublePlus History."><img src="thumbs/discord.png"></a></li>
+         <li><a href="https://www.paypal.me/romjacket" target="_blank" data-tooltip="Toss a coin to your witcher."><img src="thumbs/paypal.png"></a></li>
+         <li><a href="mailto:=romjacket@gmail.com" data-tooltip="The emails are in the computer."><img src="thumbs/email.png"></a></li>
 </ul>
 <div id="listing" align="center">
 <div class="tfnt">romjacket</div>
@@ -7417,62 +7490,6 @@ ul#social-icon-bar a img:hover{
 </div>
 </div>
 </div>
-</body>
-<script>
-    var tag = document.createElement('script')
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0]
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
-    var isiOS = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)/i) != null
-    var youtubelightbox = document.getElementById('youtubelightbox')
-    var player
-    youtubelightbox.addEventListener('click', function() {
-        this.style.display = 'none'
-        player.stopVideo()
-    }, false)
-    youtubelightbox.querySelector('.centeredchild').addEventListener('click', function(e) {
-        e.stopPropagation()
-    }, false)
-
-    function onYouTubeIframeAPIReady() {
-        createlightbox()
-    }
-
-    function getyoutubeid(link) {
-        var youtubeidreg = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i;
-        return youtubeidreg.exec(link)[1]
-    }
-
-    function createyoutubeplayer(videourl) {
-        player = new YT.Player('playerdiv', {
-            videoId: videourl,
-            playerVars: {
-                autoplay: 1
-            }
-        })
-    }
-
-    function createlightbox() {
-        var targetlinks = document.querySelectorAll('.lightbox')
-        for (var i = 0; i < targetlinks.length; i++) {
-            var link = targetlinks[i]
-            link._videoid = getyoutubeid(link)
-            targetlinks[i].addEventListener('click', function(e) {
-                youtubelightbox.style.display = 'block'
-                if (typeof player == 'undefined') {
-                    createyoutubeplayer(this._videoid)
-                } else {
-                    if (isiOS) {
-                        player.cueVideoById(this._videoid)
-                    } else {
-                        player.loadVideoById(this._videoid)
-                    }
-                }
-                e.preventDefault()
-            }, false)
-        }
-    }
-</script>
  <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24JLRJucSrI22etQ%2FQfGi39%2F"+"&opts=16862&num=10&ts=1568687731532");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
 <script>
 var accItem = document.getElementsByClassName('tabItem');
