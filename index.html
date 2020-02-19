@@ -14,14 +14,11 @@
 registerListener('load', setLazy);
 registerListener('load', lazyLoad);
 registerListener('scroll', lazyLoad);
-
 var lazy = [];
-
 function setLazy(){
 lazy = document.getElementsByClassName('lazy');
 console.log('Found ' + lazy.length + ' lazy images');
 }
-
 function lazyLoad(){
 for(var i=0; i<lazy.length; i++){
 if(isInViewport(lazy[i])){
@@ -31,17 +28,13 @@ lazy[i].removeAttribute('data-src');
 }
 }
 }
-
 cleanLazy();
 }
-
 function cleanLazy(){
 lazy = Array.prototype.filter.call(lazy, function(l){ return l.getAttribute('data-src');});
 }
-
 function isInViewport(el){
 var rect = el.getBoundingClientRect();
-
 return (
 rect.bottom >= 0 &&
 rect.right >= 0 &&
@@ -49,7 +42,6 @@ rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
 rect.left <= (window.innerWidth || document.documentElement.clientWidth)
 );
 }
-
 function registerListener(event, func) {
 if (window.addEventListener) {
 window.addEventListener(event, func)
@@ -63,7 +55,6 @@ img{
   width:100%;
   height:auto;
 }
-
 @keyframes socialAnimate {
     0% {
         top: 50px;
@@ -84,7 +75,6 @@ img{
         animation-timing-function: ease-out;
     }
 }
-
 ul#social-icon-bar{
   width:32px;
   height:auto;
@@ -99,21 +89,18 @@ ul#social-icon-bar{
   right:0px;
   
 }
-
 ul#social-icon-bar a:link{
   float: left;
   width:32px;
   height:auto;
   color: #000;
 }
-
 ul#social-icon-bar a img:hover{
   transform: scale(1.5);
   transform: translate(25,0);
   transition: 0.2s ease-in-out;
   
 }
-
 .image1{
   opacity:0.1;
 }
@@ -124,7 +111,6 @@ ul#social-icon-bar a img:hover{
   display: inline-block;
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
-
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
@@ -139,7 +125,6 @@ ul#social-icon-bar a img:hover{
   position: absolute;
   z-index: 1;
 }
-
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
   visibility: visible;
@@ -152,7 +137,6 @@ ul#social-icon-bar a img:hover{
   z-index: 6;
   cursor: pointer;
 }
-
 /* Hide the tooltip content by default */
 [data-tooltip]:before,
 [data-tooltip]:after {
@@ -162,7 +146,6 @@ ul#social-icon-bar a img:hover{
   opacity: 0;
   pointer-events: none;
 }
-
 [data-tooltip]:before {
   position: absolute;
   left: 55px;
@@ -179,7 +162,6 @@ ul#social-icon-bar a img:hover{
   font-size: 14px;
   line-height: 1.2;
 }
-
 /* Show tooltip content on hover */
 [data-tooltip]:hover:before,
 [data-tooltip]:hover:after {
@@ -190,7 +172,6 @@ ul#social-icon-bar a img:hover{
 }
 </style>
 </style>
-
 <body>
 	<ul id="social-icon-bar">
 			<a href="skeletonkey/index.html" target="_blank" data-tooltip="skeletonKeY"><img src="skeletonkey/key.png"></a>
@@ -230,151 +211,151 @@ ul#social-icon-bar a img:hover{
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/00 Sitting on the Dock of the Bay.jpg" alt="" width="100px" /><noscript><img src="thumbs/00 Sitting on the Dock of the Bay.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Sara Bareilles''%2B''Sitting on the Dock of the Bay''" target="_blank">Sitting on the Dock of the Bay</a></td>
+<td><a href="http://youtu.be/0e3SNC3Y00k" rel="noopener noreferrer" target="_blank">Sitting on the Dock of the Bay</a></td>
 <td>Sara Bareilles</td>
 <td>Random</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/00 Vanille Fraise.jpg" alt="" width="100px" /><noscript><img src="thumbs/00 Vanille Fraise.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''L'Imperatrice''%2B''Vanille Fraise''" target="_blank">Vanille Fraise</a></td>
+<td><a href="http://youtu.be/11x-CpGcqF8" rel="noopener noreferrer" target="_blank">Vanille Fraise</a></td>
 <td>L'Imperatrice</td>
 <td>L'Imperatrice</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 [untitled].jpg" alt="" width="100px" /><noscript><img src="thumbs/01 [untitled].jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Darkside''%2B''[untitled]''" target="_blank">[untitled]</a></td>
+<td><a href="http://youtu.be/q9bpz5xeuW4" rel="noopener noreferrer" target="_blank">[untitled]</a></td>
 <td>Darkside</td>
 <td>Darkside EP</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 3rd Planet.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 3rd Planet.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Modest Mouse''%2B''3rd Planet''" target="_blank">3rd Planet</a></td>
+<td><a href="http://youtu.be/KQpc1uDaI3M" rel="noopener noreferrer" target="_blank">3rd Planet</a></td>
 <td>Modest Mouse</td>
 <td>The Moon &amp; Antarctica</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 6 Underground (Nellee Hooper edit).jpg" alt="" width="100px" /><noscript><img src="thumbs/01 6 Underground (Nellee Hooper edit).jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Sneaker Pimps''%2B''6 Underground (Nellee Hooper edit)''" target="_blank">6 Underground (Nellee Hooper edit)</a></td>
+<td><a href="http://youtu.be/ZlA_ljYaBhQ" rel="noopener noreferrer" target="_blank">6 Underground (Nellee Hooper edit)</a></td>
 <td>Sneaker Pimps</td>
 <td>6 Underground</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Airbrushed.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Airbrushed.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Anamanaguchi''%2B''Airbrushed''" target="_blank">Airbrushed</a></td>
+<td><a href="http://youtu.be/TCiiso-9Oac" rel="noopener noreferrer" target="_blank">Airbrushed</a></td>
 <td>Anamanaguchi</td>
 <td>Frug 4 Lyfe</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Alexandra Stan - Mr. Saxobeat.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Alexandra Stan - Mr. Saxobeat.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Alexandra Stan''%2B''Mr. Saxobeat''" target="_blank">Mr. Saxobeat</a></td>
+<td><a href="http://youtu.be/sS76eS34Y0c" rel="noopener noreferrer" target="_blank">Mr. Saxobeat</a></td>
 <td>Alexandra Stan</td>
 <td>Saxobeats</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 All That She Wants.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 All That She Wants.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Ace of Base''%2B''All That She Wants''" target="_blank">All That She Wants</a></td>
+<td><a href="http://youtu.be/d73tiBBzvFM" rel="noopener noreferrer" target="_blank">All That She Wants</a></td>
 <td>Ace of Base</td>
 <td>The Sign</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 all the good girls go to hell.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 all the good girls go to hell.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Billie Eilish''%2B''All the good girls go to hell''" target="_blank">All the good girls go to hell</a></td>
+<td><a href="http://youtu.be/-PZsSWwc9xA" rel="noopener noreferrer" target="_blank">All the good girls go to hell</a></td>
 <td>Billie Eilish</td>
 <td></td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Ana Ng.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Ana Ng.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''They Might Be Giants''%2B''Ana Ng''" target="_blank">Ana Ng</a></td>
+<td><a href="http://youtu.be/UxxL640CRZY" rel="noopener noreferrer" target="_blank">Ana Ng</a></td>
 <td>They Might Be Giants</td>
 <td>Lincoln</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Are We Ready_ (Wreck).jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Are We Ready_ (Wreck).jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Two Door Cinema Club''%2B''Are We Ready? (Wreck)''" target="_blank">Are We Ready? (Wreck)</a></td>
+<td><a href="http://youtu.be/RrJZJtY6u7o" rel="noopener noreferrer" target="_blank">Are We Ready? (Wreck)</a></td>
 <td>Two Door Cinema Club</td>
 <td>Are We Ready? (Wreck)</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Baba O'Riley.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Baba O'Riley.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''The Who''%2B''Baba O'Riley''" target="_blank">Baba O'Riley</a></td>
+<td><a href="http://youtu.be/x2KRpRMSu4g" rel="noopener noreferrer" target="_blank">Baba O'Riley</a></td>
 <td>The Who</td>
 <td>Who's Next</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Bachana.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Bachana.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Bilal Khan''%2B''Bachana''" target="_blank">Bachana</a></td>
+<td><a href="http://youtu.be/6sG_ejqulxU" rel="noopener noreferrer" target="_blank">Bachana</a></td>
 <td>Bilal Khan</td>
 <td>Umeed</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Battery.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Battery.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Metallica''%2B''Battery''" target="_blank">Battery</a></td>
+<td><a href="http://youtu.be/md3B3I7Nmvw" rel="noopener noreferrer" target="_blank">Battery</a></td>
 <td>Metallica</td>
 <td>Master of Puppets</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Bette Davis Eyes.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Bette Davis Eyes.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Kim Carnes''%2B''Bette Davis Eyes''" target="_blank">Bette Davis Eyes</a></td>
+<td><a href="http://youtu.be/EPOIS5taqA8" rel="noopener noreferrer" target="_blank">Bette Davis Eyes</a></td>
 <td>Kim Carnes</td>
 <td>Mistaken Identity</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Beverly Hills.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Beverly Hills.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Weezer''%2B''Beverly Hills''" target="_blank">Beverly Hills</a></td>
+<td><a href="http://youtu.be/HL_WvOly7mY" rel="noopener noreferrer" target="_blank">Beverly Hills</a></td>
 <td>Weezer</td>
 <td>Make Believe</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Bitter Sweet Symphony.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Bitter Sweet Symphony.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''The Verve''%2B''Bitter Sweet Symphony''" target="_blank">Bitter Sweet Symphony</a></td>
+<td><a href="http://youtu.be/1lyu1KKwC74" rel="noopener noreferrer" target="_blank">Bitter Sweet Symphony</a></td>
 <td>The Verve</td>
 <td>Urban Hymns</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Blackbird.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Blackbird.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Walk Off the Earth''%2B''Blackbird''" target="_blank">Blackbird</a></td>
+<td><a href="http://youtu.be/u8M8s3kl1aE" rel="noopener noreferrer" target="_blank">Blackbird</a></td>
 <td>Walk Off the Earth</td>
 <td>Little Boxes</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Blackout City.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Blackout City.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Anamanaguchi''%2B''Blackout City''" target="_blank">Blackout City</a></td>
+<td><a href="http://youtu.be/87l9IhZkUuw" rel="noopener noreferrer" target="_blank">Blackout City</a></td>
 <td>Anamanaguchi</td>
 <td>Dawn Metropolis</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Blade Theme Techno Remix.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Blade Theme Techno Remix.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Rammstein''%2B''Blade Theme Techno Remix''" target="_blank">Blade Theme Techno Remix</a></td>
+<td><a href="http://youtu.be/FB4b9I4K6Ho" rel="noopener noreferrer" target="_blank">Blade Theme Techno Remix</a></td>
 <td>Rammstein</td>
 <td>title</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Block Rockin' Beats.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Block Rockin' Beats.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''The Chemical Brothers''%2B''Block Rockin' Beats''" target="_blank">Block Rockin' Beats</a></td>
+<td><a href="http://youtu.be/iTxOKsyZ0Lw" rel="noopener noreferrer" target="_blank">Block Rockin' Beats</a></td>
 <td>The Chemical Brothers</td>
 <td>Block Rockin' Beats</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Brave.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Brave.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Sara Bareilles''%2B''Brave''" target="_blank">Brave</a></td>
+<td><a href="http://youtu.be/QUQsqBqxoR4" rel="noopener noreferrer" target="_blank">Brave</a></td>
 <td>Sara Bareilles</td>
 <td>The Blessed Unrest</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Breakout.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Breakout.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Swing Out Sister''%2B''Breakout''" target="_blank">Breakout</a></td>
+<td><a href="http://youtu.be/IIOJdMdS56k" rel="noopener noreferrer" target="_blank">Breakout</a></td>
 <td>Swing Out Sister</td>
 <td>It's Better to Travel</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Bullseye.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Bullseye.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''KDrew''%2B''Bullseye''" target="_blank">Bullseye</a></td>
+<td><a href="http://youtu.be/e22wjV8HT_I" rel="noopener noreferrer" target="_blank">Bullseye</a></td>
 <td>KDrew</td>
 <td>Free Vol. 4</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Burn the Witch.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Burn the Witch.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Radiohead''%2B''Burn the Witch''" target="_blank">Burn the Witch</a></td>
+<td><a href="http://youtu.be/yI2oS2hoL0k" rel="noopener noreferrer" target="_blank">Burn the Witch</a></td>
 <td>Radiohead</td>
 <td>A Moon Shaped Pool</td>
 </tr>
@@ -386,157 +367,157 @@ ul#social-icon-bar a img:hover{
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 By Your Side.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 By Your Side.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Sade''%2B''By Your Side''" target="_blank">By Your Side</a></td>
+<td><a href="http://youtu.be/C8QJmI_V3j4" rel="noopener noreferrer" target="_blank">By Your Side</a></td>
 <td>Sade</td>
 <td>Lovers Rock</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Calling All Angels.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Calling All Angels.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Train''%2B''Calling All Angels''" target="_blank">Calling All Angels</a></td>
+<td><a href="http://youtu.be/TaG9SDxwPBg" rel="noopener noreferrer" target="_blank">Calling All Angels</a></td>
 <td>Train</td>
 <td>My Private Nation</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Caravan Palace - Lone Digger.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Caravan Palace - Lone Digger.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Caravan Palace''%2B''Lone Digger''" target="_blank">Lone Digger</a></td>
+<td><a href="http://youtu.be/UbQgXeY_zi4" rel="noopener noreferrer" target="_blank">Lone Digger</a></td>
 <td>Caravan Palace</td>
 <td><|Â°_Â°|></td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Careless Whisper.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Careless Whisper.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''George Michael''%2B''Careless Whisper''" target="_blank">Careless Whisper</a></td>
+<td><a href="http://youtu.be/izGwDsrQ1eQ" rel="noopener noreferrer" target="_blank">Careless Whisper</a></td>
 <td>George Michael</td>
 <td>Careless Whisper</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Caribbean Blue.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Caribbean Blue.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Enya''%2B''Caribbean Blue''" target="_blank">Caribbean Blue</a></td>
+<td><a href="http://youtu.be/5yRgiXh2fP4" rel="noopener noreferrer" target="_blank">Caribbean Blue</a></td>
 <td>Enya</td>
 <td>Caribbean Blue</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Caring Is Creepy.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Caring Is Creepy.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''The Shins''%2B''Caring Is Creepy''" target="_blank">Caring Is Creepy</a></td>
+<td><a href="http://youtu.be/UqMbZY_iv6E" rel="noopener noreferrer" target="_blank">Caring Is Creepy</a></td>
 <td>The Shins</td>
 <td>Oh, Inverted World</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Carry On Wayward Son.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Carry On Wayward Son.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Kansas''%2B''Carry On Wayward Son''" target="_blank">Carry On Wayward Son</a></td>
+<td><a href="http://youtu.be/P5ZJui3aPoQ" rel="noopener noreferrer" target="_blank">Carry On Wayward Son</a></td>
 <td>Kansas</td>
 <td>Leftoverture</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Chandelier.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Chandelier.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Sia''%2B''Chandelier''" target="_blank">Chandelier</a></td>
+<td><a href="http://youtu.be/2vjPBrBU-TM" rel="noopener noreferrer" target="_blank">Chandelier</a></td>
 <td>Sia</td>
 <td>1000 Forms of Fear</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Clarity.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Clarity.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''John Mayer''%2B''Clarity''" target="_blank">Clarity</a></td>
+<td><a href="http://youtu.be/ULrz-6CSmmM" rel="noopener noreferrer" target="_blank">Clarity</a></td>
 <td>John Mayer</td>
 <td>Heavier Things</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Closer.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Closer.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Lemaitre feat. Jennie A.''%2B''Closer''" target="_blank">Closer</a></td>
+<td><a href="http://youtu.be/efSbFyq1XRc" rel="noopener noreferrer" target="_blank">Closer</a></td>
 <td>Lemaitre feat. Jennie A.</td>
 <td>Closer</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Colors.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Colors.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Beck''%2B''Colors''" target="_blank">Colors</a></td>
+<td><a href="http://youtu.be/WRCA_Fo0rWA" rel="noopener noreferrer" target="_blank">Colors</a></td>
 <td>Beck</td>
 <td>Colors</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Come On Eileen.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Come On Eileen.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Dexys Midnight Runners &amp; The Emerald Express''%2B''Come On Eileen''" target="_blank">Come On Eileen</a></td>
+<td><a href="http://youtu.be/ASwge9wc-eI" rel="noopener noreferrer" target="_blank">Come On Eileen</a></td>
 <td>Dexys Midnight Runners &amp; The Emerald Express</td>
 <td>Come On Eileen</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Come.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Come.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Jain''%2B''Come''" target="_blank">Come</a></td>
+<td><a href="http://youtu.be/KDXOzr0GoA4" rel="noopener noreferrer" target="_blank">Come</a></td>
 <td>Jain</td>
 <td>Zanaka</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Counting Blue Cars.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Counting Blue Cars.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Dishwalla''%2B''Counting Blue Cars''" target="_blank">Counting Blue Cars</a></td>
+<td><a href="http://youtu.be/Clxtg2pFTQM" rel="noopener noreferrer" target="_blank">Counting Blue Cars</a></td>
 <td>Dishwalla</td>
 <td>Counting Blue Cars</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Cyndi Lauper - The Goonies 'R' Good Enough.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Cyndi Lauper - The Goonies 'R' Good Enough.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Cyndi Lauper''%2B''The Goonies 'R' Good Enough''" target="_blank">The Goonies 'R' Good Enough</a></td>
+<td><a href="http://youtu.be/LxLhytQ67fs" rel="noopener noreferrer" target="_blank">The Goonies 'R' Good Enough</a></td>
 <td>Cyndi Lauper</td>
 <td>The Goonies</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Daft Punk - Get Lucky.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Daft Punk - Get Lucky.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Daft Punk''%2B''Get Lucky (Instrumental)''" target="_blank">Get Lucky (Instrumental)</a></td>
+<td><a href="http://youtu.be/_eVswBvDyRs" rel="noopener noreferrer" target="_blank">Get Lucky (Instrumental)</a></td>
 <td>Daft Punk</td>
 <td>Get Lucky</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Daftendirekt.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Daftendirekt.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Daft Punk''%2B''Daftendirekt''" target="_blank">Daftendirekt</a></td>
+<td><a href="http://youtu.be/yuoghR-5-Xs" rel="noopener noreferrer" target="_blank">Daftendirekt</a></td>
 <td>Daft Punk</td>
 <td>Homework</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Dark Black Makeup.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Dark Black Makeup.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Radkey''%2B''Dark Black Makeup''" target="_blank">Dark Black Makeup</a></td>
+<td><a href="http://youtu.be/bSV3AROTSmI" rel="noopener noreferrer" target="_blank">Dark Black Makeup</a></td>
 <td>Radkey</td>
 <td>Dark Black Makeup</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Daybreak.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Daybreak.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''OVERWERK''%2B''Daybreak''" target="_blank">Daybreak</a></td>
+<td><a href="http://youtu.be/JnIKLRA31nw" rel="noopener noreferrer" target="_blank">Daybreak</a></td>
 <td>OVERWERK</td>
 <td>After Hours</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Derty.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Derty.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Ronald Jenkees''%2B''Derty''" target="_blank">Derty</a></td>
+<td><a href="http://youtu.be/E0tOvgi9BGM" rel="noopener noreferrer" target="_blank">Derty</a></td>
 <td>Ronald Jenkees</td>
 <td>Ronald Jenkees</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Disconnected.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Disconnected.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Pegboard Nerds''%2B''Disconnected''" target="_blank">Disconnected</a></td>
+<td><a href="http://youtu.be/MwSkC85TDgY" rel="noopener noreferrer" target="_blank">Disconnected</a></td>
 <td>Pegboard Nerds</td>
 <td>Disconnected</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Disorganized Fun.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Disorganized Fun.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Ronald Jenkees''%2B''Disorganized Fun''" target="_blank">Disorganized Fun</a></td>
+<td><a href="http://youtu.be/QnW35UDmWOI" rel="noopener noreferrer" target="_blank">Disorganized Fun</a></td>
 <td>Ronald Jenkees</td>
 <td>Disorganized Fun</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Dog Days Are Over.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Dog Days Are Over.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Florence &amp; the Machine''%2B''Dog Days Are Over''" target="_blank">Dog Days Are Over</a></td>
+<td><a href="http://youtu.be/Z8h0tNu5mCc" rel="noopener noreferrer" target="_blank">Dog Days Are Over</a></td>
 <td>Florence &amp; the Machine</td>
 <td>A Lot of Love. A Lot of Blood.</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Don't Panic.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Don't Panic.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Coldplay''%2B''Don't Panic''" target="_blank">Don't Panic</a></td>
+<td><a href="http://youtu.be/8uxt-FnNy2I" rel="noopener noreferrer" target="_blank">Don't Panic</a></td>
 <td>Coldplay</td>
 <td>Parachutes</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Don't You (Forget About Me).jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Don't You (Forget About Me).jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Simple Minds''%2B''Don't You (Forget About Me)''" target="_blank">Don't You (Forget About Me)</a></td>
+<td><a href="http://youtu.be/CdqoNKCCt7A" rel="noopener noreferrer" target="_blank">Don't You (Forget About Me)</a></td>
 <td>Simple Minds</td>
 <td>Don't You (Forget About Me)</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 DreamReaper - Impulse.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 DreamReaper - Impulse.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''DreamReaper''%2B''Impulse''" target="_blank">Impulse</a></td>
+<td><a href="http://youtu.be/19zCifI1Qzg" rel="noopener noreferrer" target="_blank">Impulse</a></td>
 <td>DreamReaper</td>
 <td>Nightwav: A Synthwave Compilation</td>
 </tr>
@@ -554,277 +535,276 @@ ul#social-icon-bar a img:hover{
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Electric Daisy Violin.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Electric Daisy Violin.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Lindsey Stirling''%2B''Electric Daisy Violin''" target="_blank">Electric Daisy Violin</a></td>
+<td><a href="http://youtu.be/vxIOUJ7by6U" rel="noopener noreferrer" target="_blank">Electric Daisy Violin</a></td>
 <td>Lindsey Stirling</td>
 <td>Lindsey Stirling</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Eurythmics - Would I Lie to You_.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Eurythmics - Would I Lie to You_.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Eurythmics''%2B''Would I Lie to You?''" target="_blank">Would I Lie to You?</a></td>
+<td><a href="http://youtu.be/Uhpu2N4rQZM" rel="noopener noreferrer" target="_blank">Would I Lie to You?</a></td>
 <td>Eurythmics</td>
 <td>Be Yourself Tonight</td>
 </tr>
-<tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Everybody Have Fun Tonight.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Everybody Have Fun Tonight.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Wang Chung''%2B''Everybody Have Fun Tonight''" target="_blank">Everybody Have Fun Tonight</a></td>
+<td><a href="https://www.youtu.be/BoXu6QmxpJE" rel="noopener noreferrer" target="_blank">Everybody Have Fun Tonight</a></td>
 <td>Wang Chung</td>
 <td>Mosaic</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Everything in Its Right Place.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Everything in Its Right Place.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Radiohead''%2B''Everything in Its Right Place''" target="_blank">Everything in Its Right Place</a></td>
+<td><a href="https://www.youtu.be/GnfPaaMR6Qc" rel="noopener noreferrer" target="_blank">Everything in Its Right Place</a></td>
 <td>Radiohead</td>
 <td>Kid A</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Everything Right Is Wrong Again.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Everything Right Is Wrong Again.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''They Might Be Giants''%2B''Everything Right Is Wrong Again''" target="_blank">Everything Right Is Wrong Again</a></td>
+<td><a href="https://www.youtu.be/GH21QovdhZs" rel="noopener noreferrer" target="_blank">Everything Right Is Wrong Again</a></td>
 <td>They Might Be Giants</td>
 <td>They Might Be Giants</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Fade Into You.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Fade Into You.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Mazzy Star''%2B''Fade Into You''" target="_blank">Fade Into You</a></td>
+<td><a href="https://www.youtu.be/ImKY6TZEyrI" rel="noopener noreferrer" target="_blank">Fade Into You</a></td>
 <td>Mazzy Star</td>
 <td>So Tonight That I Might See</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Faith.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Faith.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''George Michael''%2B''Faith''" target="_blank">Faith</a></td>
+<td><a href="https://www.youtu.be/6Cs3Pvmmv0E" rel="noopener noreferrer" target="_blank">Faith</a></td>
 <td>George Michael</td>
 <td>Faith</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Fallin'.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Fallin'.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Alicia Keys''%2B''Fallin'''" target="_blank">Fallin'</a></td>
+<td><a href="https://www.youtu.be/Urdlvw0SSEc" rel="noopener noreferrer" target="_blank">Fallin'</a></td>
 <td>Alicia Keys</td>
 <td>The Life</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Feels Good.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Feels Good.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Tony! Toni! Tone!''%2B''Feels Good''" target="_blank">Feels Good</a></td>
+<td><a href="https://www.youtu.be/8Zilur7z7TQ" rel="noopener noreferrer" target="_blank">Feels Good</a></td>
 <td>Tony! Toni! Tone!</td>
 <td>The Revival</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Feels Like the First Time.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Feels Like the First Time.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Foreigner''%2B''Feels Like the First Time''" target="_blank">Feels Like the First Time</a></td>
+<td><a href="https://www.youtu.be/8Tl-kOcnn1U" rel="noopener noreferrer" target="_blank">Feels Like the First Time</a></td>
 <td>Foreigner</td>
 <td>Foreigner</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Fireball.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Fireball.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Deep Purple''%2B''Fireball''" target="_blank">Fireball</a></td>
+<td><a href="https://www.youtu.be/q88koeaqrEg" rel="noopener noreferrer" target="_blank">Fireball</a></td>
 <td>Deep Purple</td>
 <td>Fireball</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 First of the Year (Equinox).jpg" alt="" width="100px" /><noscript><img src="thumbs/01 First of the Year (Equinox).jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Skrillex''%2B''First of the Year (Equinox)''" target="_blank">First of the Year (Equinox)</a></td>
+<td><a href="https://www.youtu.be/TYYyMu3pzL4" rel="noopener noreferrer" target="_blank">First of the Year (Equinox)</a></td>
 <td>Skrillex</td>
 <td>More Monsters and Sprites</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Free Fallin'.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Free Fallin'.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Tom Petty''%2B''Free Fallin'''" target="_blank">Free Fallin'</a></td>
+<td><a href="https://www.youtu.be/1lWJXDG2i0A" rel="noopener noreferrer" target="_blank">Free Fallin'</a></td>
 <td>Tom Petty</td>
 <td>Free Fallin'</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Funkytown.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Funkytown.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Lipps, Inc.''%2B''Funkytown''" target="_blank">Funkytown</a></td>
+<td><a href="https://www.youtu.be/F2y0koXg0DQ" rel="noopener noreferrer" target="_blank">Funkytown</a></td>
 <td>Lipps, Inc.</td>
 <td>Mouth to Mouth</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Get Down Tonight.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Get Down Tonight.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''KC and the Sunshine Band''%2B''Get Down Tonight''" target="_blank">Get Down Tonight</a></td>
+<td><a href="https://www.youtu.be/LHEsE9yN2CY" rel="noopener noreferrer" target="_blank">Get Down Tonight</a></td>
 <td>KC and the Sunshine Band</td>
 <td>Get Down Tonight / You Don't Know</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Gimme Shelter.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Gimme Shelter.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''The Rolling Stones''%2B''Gimme Shelter''" target="_blank">Gimme Shelter</a></td>
+<td><a href="https://www.youtu.be/RbmS3tQJ7Os" rel="noopener noreferrer" target="_blank">Gimme Shelter</a></td>
 <td>The Rolling Stones</td>
 <td>Let It Bleed</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Godzilla.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Godzilla.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Blue Oyster Cult''%2B''Godzilla''" target="_blank">Godzilla</a></td>
+<td><a href="https://www.youtu.be/TvQWBXJOgAI" rel="noopener noreferrer" target="_blank">Godzilla</a></td>
 <td>Blue Oyster Cult</td>
 <td>Spectres</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Got to Be Real.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Got to Be Real.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Cheryl Lynn''%2B''Got to Be Real''" target="_blank">Got to Be Real</a></td>
+<td><a href="https://www.youtu.be/fI569nw0YUQ" rel="noopener noreferrer" target="_blank">Got to Be Real</a></td>
 <td>Cheryl Lynn</td>
 <td>Cheryl Lynn</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Grind.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Grind.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Alice in Chains''%2B''Grind''" target="_blank">Grind</a></td>
+<td><a href="https://www.youtu.be/83gddxVpitc" rel="noopener noreferrer" target="_blank">Grind</a></td>
 <td>Alice in Chains</td>
 <td>Alice in Chains</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Hard Times.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Hard Times.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Paramore''%2B''Hard Times''" target="_blank">Hard Times</a></td>
+<td><a href="https://www.youtu.be/AEB6ibtdPZc" rel="noopener noreferrer" target="_blank">Hard Times</a></td>
 <td>Paramore</td>
 <td>After Laughter</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Hard to Say I'm Sorry.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Hard to Say I'm Sorry.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Chicago''%2B''Hard to Say I'm Sorry''" target="_blank">Hard to Say I'm Sorry</a></td>
+<td><a href="https://www.youtu.be/U1yeC2wmtzw" rel="noopener noreferrer" target="_blank">Hard to Say I'm Sorry</a></td>
 <td>Chicago</td>
 <td>Hard to Say I'm Sorry / Sonny Think Twice</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Harder to Breathe.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Harder to Breathe.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Maroon 5''%2B''Harder to Breathe''" target="_blank">Harder to Breathe</a></td>
+<td><a href="https://www.youtu.be/rV8NHsmVMPE" rel="noopener noreferrer" target="_blank">Harder to Breathe</a></td>
 <td>Maroon 5</td>
 <td>Songs About Jane</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Heist.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Heist.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''El Tigr3''%2B''Heist''" target="_blank">Heist</a></td>
+<td><a href="https://www.youtu.be/Q167cDpUKTY" rel="noopener noreferrer" target="_blank">Heist</a></td>
 <td>El Tigr3</td>
 <td>Heist</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Hello.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Hello.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Poe''%2B''Hello''" target="_blank">Hello</a></td>
+<td><a href="https://www.youtu.be/SAVgJQVo2oE" rel="noopener noreferrer" target="_blank">Hello</a></td>
 <td>Poe</td>
 <td>Hello</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Here Comes the Rain Again.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Here Comes the Rain Again.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Eurythmics''%2B''Here Comes the Rain Again''" target="_blank">Here Comes the Rain Again</a></td>
+<td><a href="https://www.youtu.be/TzFnYcIqj6I" rel="noopener noreferrer" target="_blank">Here Comes the Rain Again</a></td>
 <td>Eurythmics</td>
 <td>Touch</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Hey Jude.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Hey Jude.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''The Beatles''%2B''Hey Jude''" target="_blank">Hey Jude</a></td>
+<td><a href="https://www.youtu.be/A_MjCqQoLLA" rel="noopener noreferrer" target="_blank">Hey Jude</a></td>
 <td>The Beatles</td>
 <td>Hey Jude / Revolution</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Hey Man Nice Shot.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Hey Man Nice Shot.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Filter''%2B''Hey Man Nice Shot''" target="_blank">Hey Man Nice Shot</a></td>
+<td><a href="https://www.youtu.be/o9mJ82x_l-E" rel="noopener noreferrer" target="_blank">Hey Man Nice Shot</a></td>
 <td>Filter</td>
 <td>Short Bus</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Higher Love.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Higher Love.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Steve Winwood''%2B''Higher Love''" target="_blank">Higher Love</a></td>
+<td><a href="https://www.youtu.be/k9olaIio3l8" rel="noopener noreferrer" target="_blank">Higher Love</a></td>
 <td>Steve Winwood</td>
 <td>Back in the High Life</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 How Bizarre (radio mix).jpg" alt="" width="100px" /><noscript><img src="thumbs/01 How Bizarre (radio mix).jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''OMC''%2B''How Bizarre (radio mix)''" target="_blank">How Bizarre (radio mix)</a></td>
+<td><a href="https://www.youtu.be/VVhl5LmeO_Q" rel="noopener noreferrer" target="_blank">How Bizarre (radio mix)</a></td>
 <td>OMC</td>
 <td>How Bizarre</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Hurricane.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Hurricane.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Bob Dylan''%2B''Hurricane''" target="_blank">Hurricane</a></td>
+<td><a href="https://www.youtu.be/bpZvg_FjL3Q" rel="noopener noreferrer" target="_blank">Hurricane</a></td>
 <td>Bob Dylan</td>
 <td>Desire</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 I Dare You to Move.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 I Dare You to Move.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Switchfoot''%2B''I Dare You to Move''" target="_blank">I Dare You to Move</a></td>
+<td><a href="https://www.youtu.be/WhpyE6a4k4o" rel="noopener noreferrer" target="_blank">I Dare You to Move</a></td>
 <td>Switchfoot</td>
 <td>Learning to Breathe</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 I Ran.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 I Ran.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''A Flock of Seagulls''%2B''I Ran''" target="_blank">I Ran</a></td>
+<td><a href="https://www.youtu.be/iIpfWORQWhU" rel="noopener noreferrer" target="_blank">I Ran</a></td>
 <td>A Flock of Seagulls</td>
 <td>A Flock of Seagulls</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Invisible Touch.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Invisible Touch.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Genesis''%2B''Invisible Touch''" target="_blank">Invisible Touch</a></td>
+<td><a href="https://www.youtu.be/jpmiZ7zsHXY" rel="noopener noreferrer" target="_blank">Invisible Touch</a></td>
 <td>Genesis</td>
 <td>Invisible Touch</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Is It a Crime.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Is It a Crime.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Sade''%2B''Is It a Crime''" target="_blank">Is It a Crime</a></td>
+<td><a href="https://www.youtu.be/NYz8xs163YU" rel="noopener noreferrer" target="_blank">Is It a Crime</a></td>
 <td>Sade</td>
 <td>Promise</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Itvara.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Itvara.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Fractal''%2B''Itvara''" target="_blank">Itvara</a></td>
+<td><a href="https://www.youtu.be/Q1Y_AZ8fJD0" rel="noopener noreferrer" target="_blank">Itvara</a></td>
 <td>Fractal</td>
 <td>Itvara</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Jolene.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Jolene.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Dolly Parton''%2B''Jolene''" target="_blank">Jolene</a></td>
+<td><a href="https://www.youtu.be/Ixrje2rXLMA" rel="noopener noreferrer" target="_blank">Jolene</a></td>
 <td>Dolly Parton</td>
 <td>Jolene</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Kenny Loggins - Danger Zone.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Kenny Loggins - Danger Zone.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Kenny Loggins''%2B''Danger Zone''" target="_blank">Danger Zone</a></td>
+<td><a href="https://www.youtu.be/yK0P1Bk8Cx4" rel="noopener noreferrer" target="_blank">Danger Zone</a></td>
 <td>Kenny Loggins</td>
 <td>Top Gun: Original Motion Picture Soundtrack</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Kiss From a Rose.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Kiss From a Rose.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Seal''%2B''Kiss From a Rose''" target="_blank">Kiss From a Rose</a></td>
+<td><a href="https://www.youtu.be/AMD2TwRvuoU" rel="noopener noreferrer" target="_blank">Kiss From a Rose</a></td>
 <td>Seal</td>
 <td>Kiss From a Rose</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Kiss.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Kiss.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Prince and The Revolution''%2B''Kiss''" target="_blank">Kiss</a></td>
+<td><a href="https://www.youtu.be/EldE19kAMeg" rel="noopener noreferrer" target="_blank">Kiss</a></td>
 <td>Prince and The Revolution</td>
 <td>Kiss</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Knife Party - Rage Valley.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Knife Party - Rage Valley.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Knife Party''%2B''Rage Valley''" target="_blank">Rage Valley</a></td>
+<td><a href="https://www.youtu.be/Ys9sIqv42lo" rel="noopener noreferrer" target="_blank">Rage Valley</a></td>
 <td>Knife Party</td>
 <td>Rage Valley</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Knockin' on Heavens Door.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Knockin' on Heavens Door.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Eric Clapton''%2B''Knockin' on Heavens Door''" target="_blank">Knockin' on Heavens Door</a></td>
+<td><a href="https://www.youtu.be/Sbth8YBWyfM" rel="noopener noreferrer" target="_blank">Knockin' on Heavens Door</a></td>
 <td>Eric Clapton</td>
 <td>Knocking on Heaven's Door / Someone Like You</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Kryptonite.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Kryptonite.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''3 Doors Down''%2B''Kryptonite''" target="_blank">Kryptonite</a></td>
+<td><a href="https://www.youtu.be/xPU8OAjjS4k" rel="noopener noreferrer" target="_blank">Kryptonite</a></td>
 <td>3 Doors Down</td>
 <td>The Better Life</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Lauren.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Lauren.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Men I Trust''%2B''Lauren''" target="_blank">Lauren</a></td>
+<td><a href="https://www.youtu.be/TNsSBhl_2LI" rel="noopener noreferrer" target="_blank">Lauren</a></td>
 <td>Men I Trust</td>
 <td>Lauren</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Le depart.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Le depart.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''L'Imperatrice''%2B''Le depart''" target="_blank">Le depart</a></td>
+<td><a href="https://www.youtu.be/ulKDXQw4xCQ" rel="noopener noreferrer" target="_blank">Le depart</a></td>
 <td>L'Imperatrice</td>
 <td>Odyssee</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Let Go.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Let Go.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Frou Frou''%2B''Let Go''" target="_blank">Let Go</a></td>
+<td><a href="https://www.youtu.be/13WAhlE02ew" rel="noopener noreferrer" target="_blank">Let Go</a></td>
 <td>Frou Frou</td>
 <td>Details</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Let's Get It On.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Let's Get It On.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Marvin Gaye''%2B''Let's Get It On''" target="_blank">Let's Get It On</a></td>
+<td><a href="https://www.youtu.be/x6QZn9xiuOE" rel="noopener noreferrer" target="_blank">Let's Get It On</a></td>
 <td>Marvin Gaye</td>
 <td>Let's Get It On</td>
 </tr>
@@ -836,103 +816,103 @@ ul#social-icon-bar a img:hover{
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Let's Go!.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Let's Go!.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Summer Cats''%2B''Let's Go!''" target="_blank">Let's Go!</a></td>
+<td><a href="https://www.youtu.be/RAvKMh3mkvM" rel="noopener noreferrer" target="_blank">Let's Go!</a></td>
 <td>Summer Cats</td>
 <td>Songs for Tuesdays</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Levitate.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Levitate.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Hadouken!''%2B''Levitate''" target="_blank">Levitate</a></td>
+<td><a href="https://www.youtu.be/ZyZeZnw46Og" rel="noopener noreferrer" target="_blank">Levitate</a></td>
 <td>Hadouken!</td>
 <td>Levitate</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Life in a Northern Town.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Life in a Northern Town.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''The Dream Academy''%2B''Life in a Northern Town''" target="_blank">Life in a Northern Town</a></td>
+<td><a href="https://www.youtu.be/X5uxQElYu68" rel="noopener noreferrer" target="_blank">Life in a Northern Town</a></td>
 <td>The Dream Academy</td>
 <td>The Dream Academy</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Lights.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Lights.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Journey''%2B''Lights''" target="_blank">Lights</a></td>
+<td><a href="https://www.youtu.be/iP8_Dbvpi-A" rel="noopener noreferrer" target="_blank">Lights</a></td>
 <td>Journey</td>
 <td>Infinity</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Like a Rolling Stone.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Like a Rolling Stone.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Bob Dylan''%2B''Like a Rolling Stone''" target="_blank">Like a Rolling Stone</a></td>
+<td><a href="https://www.youtu.be/IwOfCgkyEj0" rel="noopener noreferrer" target="_blank">Like a Rolling Stone</a></td>
 <td>Bob Dylan</td>
 <td>Highway 61 Revisited</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Live Is Life.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Live Is Life.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Opus''%2B''Live Is Life''" target="_blank">Live Is Life</a></td>
+<td><a href="https://www.youtu.be/pATX-lV0VFk" rel="noopener noreferrer" target="_blank">Live Is Life</a></td>
 <td>Opus</td>
 <td>Live Is Life</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Love Is a Stranger.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Love Is a Stranger.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Eurythmics''%2B''Love Is a Stranger''" target="_blank">Love Is a Stranger</a></td>
+<td><a href="https://www.youtu.be/o6f593X6rv8" rel="noopener noreferrer" target="_blank">Love Is a Stranger</a></td>
 <td>Eurythmics</td>
 <td>Sweet Dreams (Are Made of This)</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 LudoWic - Katana ZERO (OST-version).jpg" alt="" width="100px" /><noscript><img src="thumbs/01 LudoWic - Katana ZERO (OST-version).jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''LudoWic''%2B''Katana ZERO (OST-version)''" target="_blank">Katana ZERO (OST-version)</a></td>
+<td><a href="https://www.youtu.be/o2ixSDspF4A" rel="noopener noreferrer" target="_blank">Katana ZERO (OST-version)</a></td>
 <td>LudoWic</td>
 <td>Katana ZERO - Original Soundtrack</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Luka.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Luka.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Suzanne Vega''%2B''Luka''" target="_blank">Luka</a></td>
+<td><a href="https://www.youtu.be/VZt7J0iaUD0" rel="noopener noreferrer" target="_blank">Luka</a></td>
 <td>Suzanne Vega</td>
 <td>Solitude Songs</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Mac n' Cheese.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Mac n' Cheese.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''sssShawnnnn''%2B''Mac n' Cheese''" target="_blank">Mac n' Cheese</a></td>
+<td><a href="https://www.youtu.be/b_C3pK6MN6c" rel="noopener noreferrer" target="_blank">Mac n' Cheese</a></td>
 <td>sssShawnnnn</td>
 <td>Mac n' Cheese</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Magnetic Moment.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Magnetic Moment.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Ronald Jenkees''%2B''Magnetic Moment''" target="_blank">Magnetic Moment</a></td>
+<td><a href="https://www.youtu.be/sSW9NIoqimA" rel="noopener noreferrer" target="_blank">Magnetic Moment</a></td>
 <td>Ronald Jenkees</td>
 <td>Days Away</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 May It Be.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 May It Be.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Enya''%2B''May It Be''" target="_blank">May It Be</a></td>
+<td><a href="https://www.youtu.be/i7MLT4MmAK8" rel="noopener noreferrer" target="_blank">May It Be</a></td>
 <td>Enya</td>
 <td>May It Be</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 Midnight Rider.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 Midnight Rider.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Gregg Allman''%2B''Midnight Rider''" target="_blank">Midnight Rider</a></td>
+<td><a href="https://www.youtu.be/yojZ-Ksr8AE" rel="noopener noreferrer" target="_blank">Midnight Rider</a></td>
 <td>Gregg Allman</td>
 <td>Laid Back</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 My Cherie Amour.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 My Cherie Amour.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Stevie Wonder''%2B''My Cherie Amour''" target="_blank">My Cherie Amour</a></td>
+<td><a href="https://www.youtu.be/Fjufjv4rH0s" rel="noopener noreferrer" target="_blank">My Cherie Amour</a></td>
 <td>Stevie Wonder</td>
 <td>My Cherie Amour</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 My Name Is Jonas.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 My Name Is Jonas.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Weezer''%2B''My Name Is Jonas''" target="_blank">My Name Is Jonas</a></td>
+<td><a href="https://www.youtu.be/VoAnLHSLHGQ" rel="noopener noreferrer" target="_blank">My Name Is Jonas</a></td>
 <td>Weezer</td>
 <td>Weezer</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 No Ordinary Love.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 No Ordinary Love.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Sade''%2B''No Ordinary Love''" target="_blank">No Ordinary Love</a></td>
+<td><a href="https://www.youtu.be/_WcWHZc8s2I" rel="noopener noreferrer" target="_blank">No Ordinary Love</a></td>
 <td>Sade</td>
 <td>Love Deluxe</td>
 </tr>
 <tr>
 <td><div class="item"><img class="lazy" src="thumbs/icon.png" data-src="thumbs/01 No Rain.jpg" alt="" width="100px" /><noscript><img src="thumbs/01 No Rain.jpg" alt="" width="100px" /></noscript></div></td>
-<td><a href="http://youtube.com/results?search_query=''Blind Melon''%2B''No Rain''" target="_blank">No Rain</a></td>
+<td><a href="https://www.youtu.be/3qVPNONdF58" rel="noopener noreferrer" target="_blank">No Rain</a></td>
 <td>Blind Melon</td>
 <td>No Rain</td>
 </tr>
@@ -7222,7 +7202,6 @@ ul#social-icon-bar a img:hover{
 </div>
 </div>
 </div>
-
 </div>
 </div>
 <div id="outer">
@@ -7726,5 +7705,4 @@ color: blue;
 img {
 }
 </style>
-
 </html>
