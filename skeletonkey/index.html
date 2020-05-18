@@ -1891,7 +1891,8 @@ width: 100%;
 }
 #menuToggle input:checked~span {
     transform: rotate(45deg) translate(-2px, -1px);
-		transition: 0.3s;
+		opacity: 0.25;
+	transition: 0.3s;
 }
 #menuToggle input:checked~span:nth-last-child(3) {
     opacity: 0;
@@ -1899,7 +1900,7 @@ width: 100%;
 		transition: 0.3s;
 }
 #menuToggle input:checked~span:nth-last-child(2) {
-	opacity: 1;
+	opacity: 0.25;
     transform: rotate(-45deg) translate(0, -1px);
 		transition: 0.3s;	
 }
@@ -1973,4 +1974,30 @@ width: 100%;
     1px 30px 60px rgba(16,16,16,0.5); 
 }
 </style>
+
+<style>
+	@media screen and (max-width: 700px) {
+	  .tfnt {
+	font-size: 5em;
+	font-weight: 500;
+	}
+	.dtext {
+    font-size: 3em;
+    font-weight: 300;	
+}
+</style>
+<style>
+	@media screen and (max-width: 500px) {
+	  .tfnt {
+	font-size: 3em;
+	font-weight: 300;
+	}
+		.dtext {
+    font-size: 2em;
+    font-weight: 200;	
+}
+	
+}
+</style>
+
 </html>
