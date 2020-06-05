@@ -75,7 +75,7 @@ img{
         animation-timing-function: ease-out;
     }
 }
-ul#social-icon-bar{
+ul#social-icon-bar {
   width:32px;
   height:auto;
   list-style:none;
@@ -90,8 +90,8 @@ ul#social-icon-bar{
   
 }
 ul#social-icon-bar a:link{
-  float: left;
   width:32px;
+  float: left;
   height:auto;
   color: #000;
 }
@@ -9372,6 +9372,16 @@ text-shadow: 1px 1px 1px #919191,
 	ul#social-icon-bar{
 	top:30px;
 	}
+	@keyframes socialAnimate {
+		0% {
+			top: 18px;
+			}
+		}	
+	ul#social-icon-bar {
+	width:25px;
+	}
+ul#social-icon-bar a:link{
+  width:25px;
 }
 </style>
 <style>
@@ -9422,9 +9432,20 @@ text-shadow: 1px 1px 1px #919191,
 	#menu li {
 	font-size: 11px;
 	}
-	ul#social-icon-bar{
+	ul#social-icon-bar {
 	top:15px;
 	}
+	@keyframes socialAnimate {
+		0% {
+			top: 10px;
+			}
+		}
+	ul#social-icon-bar {
+	width:20px;
+	}
+ul#social-icon-bar a:link{
+  width:20px;
+  }
 }
 
 </style>
