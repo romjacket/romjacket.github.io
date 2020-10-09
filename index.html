@@ -56,6 +56,10 @@
 </script>
 
 <body>
+
+<body onload="myFunction()" style="margin:0;">
+  <div id="loader"></div>
+  <div style="display:none;" id="myDiv" class="animate-bottom">
     <div id="menuToggle">
         <input type="checkbox" onclick="onClickHandler()" id="box" />
         <span></span>
@@ -92,6 +96,9 @@
                 </li>
                 <li>
                     <a href="mailto:romjacket@gmail.com" data-tooltip="The emails are in the computer."><img src="img/email.png" height="25px"></a>
+                </li>
+                <li>
+                    <a href="https://www.buymeacoffee.com/romjacket"" data-tooltip="Coffee-shops don't let me drink for free."><img src="img/coffee.png" height="25px"></a>
                 </li>
             </ul>
         </ul>
@@ -1613,7 +1620,37 @@
     </div>
     <br>
     </div>
+    </div>
 </body>
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+$(function(){
+  var $refreshButton = $('#refresh');
+  var $results = $('#css_result');
+  
+  function refresh(){
+    var css = $('style.cp-pen-styles').text();
+    $results.html(css);
+  }
+
+  refresh();
+  $refreshButton.click(refresh);
+  
+  // Select all the contents when clicked
+  $results.click(function(){
+    $(this).select();
+  });
+});
+</script>
 <script type="javascript" id="searchfld">
     let n = 0 function findInPage(str) { var txt, i, found if (str == '') { return false } // Find next occurance of the given string on the page, wrap around to the // start of the page if necessary. if (window.find) { // Look for match starting at the current
     point. If not found, rewind // back to the first match. if (!window.find(str)) { while (window.find(str, false, true)) { n++ } } else { n++ } // If not found in either direction, give message. if (n == 0) { alert('Not found.') } } else if (window.document.body.createTextRange)
@@ -1685,6 +1722,77 @@
                 }
             }
         </script>
+		
+<style>
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0
+  }
+  to {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+</style>
         <style>
             img {
                 width: 100%;
