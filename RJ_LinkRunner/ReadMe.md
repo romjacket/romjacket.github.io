@@ -79,13 +79,13 @@ The "GPD" button will set the location where profile folders for each game will 
 
 Right-Click on the buttons in the setup tool to download supported executables.
 
-![AsAdmin](https://romjacket.github.io/RJ_LinkRunner/img/Setup.png)
+![Setup](https://romjacket.github.io/RJ_LinkRunner/img/Setup.png)
 
 ## Launching Games
 
 It is not necessary, but best if RJ_LinkRunner.exe, antimicro.exe and xpadder.exe are assigned to run as the administrator.
 
-![AsAdmin](https://romjacket.github.io/RJ_LinkRunner/runas.png)
+![AsAdmin](https://romjacket.github.io/RJ_LinkRunner/img/runas.png)
 
 During gameplay you may create additional joystick profiles and any found within the game's jacket will be saved and reloaded for player 2/3/4, prioritizing the default profile-name eg: "Game Jacket".gamecontroller.amgp, and other "player#" monikers.)
 
